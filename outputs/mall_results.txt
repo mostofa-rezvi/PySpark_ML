@@ -1,0 +1,60 @@
+=== Mall Customer Segmentation Results ===
+
+--- Schema ---
+root
+ |-- CustomerID: integer (nullable = true)
+ |-- Gender: string (nullable = true)
+ |-- Age: integer (nullable = true)
+ |-- Annual Income (k$): integer (nullable = true)
+ |-- Spending Score (1-100): integer (nullable = true)
+
+--- Basic Descriptive Statistics ---
+summary         CustomerID Gender               Age Annual Income (k$) Spending Score (1-100)
+  count                200    200               200                200                    200
+   mean              100.5    NaN             38.85              60.56                   50.2
+ stddev 57.879184513951124    NaN 13.96900733155888  26.26472116527124     25.823521668370173
+    min                  1 Female                18                 15                      1
+    max                200   Male                70                137                     99
+
+
+--- K-Means Clustering (k = 3) ---
+Cluster Centers (Age, Annual Income, Spending Score):
+Cluster 0: Age=33.42, Income=89.02, Spending Score=75.58
+Cluster 1: Age=25.14, Income=43.80, Spending Score=55.81
+Cluster 2: Age=51.18, Income=58.27, Spending Score=33.70
+
+Sample Cluster Assignments:
+ CustomerID Gender  Age  Annual Income (k$)  Spending Score (1-100)  cluster
+          1   Male   19                  15                      39        1
+          2   Male   21                  15                      81        1
+          3 Female   20                  16                       6        1
+          4 Female   23                  16                      77        1
+          5 Female   31                  17                      40        1
+          6 Female   22                  17                      76        1
+          7 Female   35                  18                       6        2
+          8 Female   23                  18                      94        1
+          9   Male   64                  19                       3        2
+         10 Female   30                  19                      72        1
+
+
+--- K-Means Clustering (k = 5) ---
+Cluster Centers (Age, Annual Income, Spending Score):
+Cluster 0: Age=32.88, Income=86.10, Spending Score=81.53
+Cluster 1: Age=55.54, Income=47.95, Spending Score=41.89
+Cluster 2: Age=44.39, Income=89.77, Spending Score=18.48
+Cluster 3: Age=27.06, Income=51.98, Spending Score=41.04
+Cluster 4: Age=25.52, Income=26.30, Spending Score=78.57
+
+Sample Cluster Assignments:
+ CustomerID Gender  Age  Annual Income (k$)  Spending Score (1-100)  cluster
+          1   Male   19                  15                      39        3
+          2   Male   21                  15                      81        4
+          3 Female   20                  16                       6        3
+          4 Female   23                  16                      77        4
+          5 Female   31                  17                      40        3
+          6 Female   22                  17                      76        4
+          7 Female   35                  18                       6        3
+          8 Female   23                  18                      94        4
+          9   Male   64                  19                       3        1
+         10 Female   30                  19                      72        4
+
