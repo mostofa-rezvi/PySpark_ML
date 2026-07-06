@@ -13,7 +13,7 @@ This repository contains the implementation of two machine learning assignments 
 - **Part A:** Supervised Learning — Titanic Survival Prediction
 - **Part B:** Unsupervised Learning — Mall Customer Segmentation
 
-The final report is available in [`PySpark_ML_Assignment_Report.pdf`](./PySpark_ML_Assignment_Report.pdf).
+The final report is available in [`PySpark & ML - Assignment Report.pdf`](./PySpark & ML - Assignment Report.pdf).
 
 ---
 
