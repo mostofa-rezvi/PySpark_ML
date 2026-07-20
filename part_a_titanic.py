@@ -1,5 +1,12 @@
 import os
-os.environ["JAVA_HOME"] = "C:\\Program Files\\Java\\jdk-17"
+if not os.path.exists(os.environ.get("JAVA_HOME", "")):
+    for path in [
+        "C:\\Program Files\\Microsoft\\jdk-17.0.19.10-hotspot",
+        "C:\\Program Files\\Java\\jdk-17",
+    ]:
+        if os.path.exists(path):
+            os.environ["JAVA_HOME"] = path
+            break
 os.environ.pop("SPARK_SUBMIT_OPTS", None)
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, when, count, desc
